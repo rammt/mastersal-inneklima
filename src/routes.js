@@ -1,5 +1,6 @@
 const ROUTES = {
-    DASHBOARD: '/'
+    DASHBOARD: '/',
+    LOGIN: '/login'
 }
 
 export default ROUTES;
