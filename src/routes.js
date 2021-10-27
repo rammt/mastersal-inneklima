@@ -1,6 +1,7 @@
 const ROUTES = {
     DASHBOARD: '/',
-    LOGIN: '/login'
-}
+    LOGIN: '/login',
+    VIPPS_REDIRECT: '/vipps/redirect',
+};
 
 export default ROUTES;
