@@ -13,7 +13,13 @@ const VippsRedirect = () => {
         const token = VippsService.getToken3(code);
     });
 
-    return <></>;
+    return (
+        <div>
+            <a href="/">
+                <button>Back</button>
+            </a>
+        </div>
+    );
 };
 
 export default VippsRedirect;
