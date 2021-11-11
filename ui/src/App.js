@@ -10,6 +10,7 @@ import ROUTES from './routes';
 // Views
 import Dashboard from './views/dashboard/dashboard';
 import Login from './views/login/login';
+import VippsRedirect from './views/login/vippsRedirect';
 
 // Contexts
 import { UserContext } from './contexts/UserContext';
@@ -48,6 +49,11 @@ const App = () => {
                 <Router>
                     <Switch>
                         <Route exact path={ROUTES.LOGIN} component={Login} />
+                        <Route
+                            exact
+                            path={ROUTES.VIPPS_REDIRECT}
+                            component={VippsRedirect}
+                        />
                         <PrivateRoute
                             exact
                             path={ROUTES.DASHBOARD}
