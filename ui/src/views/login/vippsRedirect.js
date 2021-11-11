@@ -8,9 +8,10 @@ const VippsRedirect = () => {
     const state = new URLSearchParams(search).get('state');
 
     useEffect(() => {
-        console.log('Code:', code);
-        console.log('State:', state);
-        const token = VippsService.getToken3(code);
+        const token = VippsService.getToken(code);
+        token.then((token) => {
+            console.log('token:', token);
+        });
     });
 
     return (

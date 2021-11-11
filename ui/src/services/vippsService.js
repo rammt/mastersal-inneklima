@@ -28,12 +28,26 @@ const client = new ClientOAuth2({
     state: 'test1234',
 });
 
+const axiosClient = axios.create({
+    baseURL: 'http://localhost:8080/',
+});
+
 export default class VippsService {
     static getRedirectURI() {
-        return client.code.getUri();
+        return axiosClient.get('/login/auth');
     }
 
     static getToken(code) {
+        return axiosClient.get('/login/token', {
+            params: { code },
+        });
+    }
+
+    static getRedirectURI_dep() {
+        return client.code.getUri();
+    }
+
+    static getToken_dep(code) {
         return client.code.getToken(
             `/vipps/redirect?state=${'test1234'}&code=${code}`,
             {

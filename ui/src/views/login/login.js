@@ -4,9 +4,11 @@ import VippsService from '../../services/vippsService';
 const Login = () => {
     const login = () => {
         console.log("We loggin' in now bois!");
-        const redirectURI = VippsService.getRedirectURI();
-        console.log('RedirectURI:', redirectURI);
-        window.location.replace(redirectURI);
+        const redirectURIPromise = VippsService.getRedirectURI();
+        redirectURIPromise.then((uri) => {
+            console.log('RedirectURI:', uri.data);
+            window.location.replace(uri.data);
+        });
     };
 
     return (
